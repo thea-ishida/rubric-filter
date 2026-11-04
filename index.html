@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rubric Filter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Rubric Filter</h1>
+      <p class="lede">Eight project pitches go in. A rubric decides which come out. Swap the rubric and watch what survives change, even though the ideas stay the same.</p>
+    </header>
+
+    <section class="controls" aria-label="Choose a rubric">
+      <div class="toggle" role="group" aria-label="Rubric">
+        <button type="button" data-rubric="course" aria-pressed="true">Course rubric</button>
+        <button type="button" data-rubric="open" aria-pressed="false">Open rubric</button>
+      </div>
+      <button type="button" id="run" class="run">Run filter</button>
+    </section>
+
+    <section class="rubric" aria-live="polite">
+      <h2 id="rubric-name">Course rubric</h2>
+      <p id="rubric-blurb"></p>
+      <ul id="weights" class="weights"></ul>
+      <p class="threshold">Pass mark: <strong id="threshold"></strong> of the maximum score</p>
+    </section>
+
+    <section class="queue" aria-label="Pitches waiting">
+      <h2>Pitches <span id="queue-count" class="count"></span></h2>
+      <ul id="queue" class="cards"></ul>
+    </section>
+
+    <div class="bins">
+      <section class="bin pass" aria-label="Passed">
+        <h2>Passed <span id="pass-count" class="count">0</span></h2>
+        <ul id="pass" class="cards"></ul>
+      </section>
+      <section class="bin discard" aria-label="Discard pile">
+        <h2>Discard pile <span id="discard-count" class="count">0</span></h2>
+        <ul id="discard" class="cards"></ul>
+      </section>
+    </div>
+
+    <footer>
+      <p>Made by Thea Ishida for DIGIHUM 2120, Creative Sprint 8. Built from R. Keith Sawyer's chapter "Science" in <em>Explaining Creativity</em> and the film <em>Hidden Figures</em>.</p>
+      <p>AI disclosure: code and the stand-in pitches were written with help from Claude (Anthropic). Weights and pitches live in <code>data.js</code>.</p>
+    </footer>
+  </main>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
